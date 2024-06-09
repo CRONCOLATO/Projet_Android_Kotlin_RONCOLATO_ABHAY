@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_country_detail"
+    app:startDestination="@id/countryDetailFragment">
+
+    <fragment
+        android:id="@+id/countryDetailFragment"
+        android:name="com.example.myapplication.CountryDetailFragment"
+        tools:layout="@layout/fragment_country_detail">
+        <argument
+            android:name="country"
+            app:argType="com.example.myapplication.network.Country" />
+        <action
+            android:id="@+id/action_countryDetailFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_countryDetailFragment_to_helloWorldFragment"
+            app:destination="@id/helloWorldFragment" />
+        <action
+            android:id="@+id/action_countryDetailFragment_to_supFragment"
+            app:destination="@id/supFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.myapplication.FavoriteFragment"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favoriteFragment_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_helloWorldFragment"
+            app:destination="@id/helloWorldFragment" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_supFragment"
+            app:destination="@id/supFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/helloWorldFragment"
+        android:name="com.example.myapplication.HelloWorldFragment"
+        tools:layout="@layout/fragment_hello_world">
+        <action
+            android:id="@+id/action_helloWorldFragment_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_supFragment"
+            app:destination="@id/supFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/supFragment"
+        android:name="com.example.myapplication.SupFragment"
+        tools:layout="@layout/fragment_sup">
+        <action
+            android:id="@+id/action_supFragment_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment" />
+        <action
+            android:id="@+id/action_supFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_supFragment_to_helloWorldFragment"
+            app:destination="@id/helloWorldFragment" />
+    </fragment>
+
+</navigation>
